@@ -3,8 +3,6 @@ import requests
 import json
 import os
 
-lokalizacja = os.getenv("locations", "Warszawa")
-
 class WeatherRequester:
     def __init__(self, lokalizacja):
         self.lokalizacja = lokalizacja
@@ -40,6 +38,7 @@ class WeatherRequester:
             time.sleep(30)
 
 
+lokalizacja = os.getenv("locations", "Warszawa")
 
-weather_requester = WeatherRequester("Warszawa")
+weather_requester = WeatherRequester(lokalizacja)
 weather_requester.loop()
