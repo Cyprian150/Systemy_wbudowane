@@ -1,5 +1,13 @@
 services:
+  mqtt:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+      - "8080:8080"
+    volumes:
+      - "./mqtt_config:/mosquitto/config"
   api-module:
     image: api-module:latest
     environment:
       locations: Warszawa
+      mqtt_host_name: mqtt
