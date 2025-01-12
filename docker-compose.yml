@@ -1,0 +1,5 @@
+services:
+  api-module:
+    image: api-module:latest
+    environment:
+      locations: Warszawa
